@@ -1,0 +1,10 @@
+framework module ScadeKit {
+  umbrella header "ScadeKit.h"
+
+  export *
+  module * { export * }
+}
+
+module ScadeKit.Swift {
+    header "ScadeKit-Swift.h"
+}

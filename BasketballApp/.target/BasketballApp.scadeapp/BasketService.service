@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.scade.sdk.data.service="http://scade.com/sdk/data/service" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="src" nsURI="http://scade.com/elua/src">
+  <eClassifiers xsi:type="com.scade.sdk.data.service:Service" name="BasketService" auth="//BasketService/@contents.0">
+    <eSuperTypes href="http://scade.com/BasketballApp#//BasketService"/>
+    <eOperations xsi:type="com.scade.sdk.data.service:HttpRequest" name="getSchedule" eType="//ScheduleResponse" responseType="JSON" url="http://www.basketclub.ru/pictures/scheduleApp/Schedule.json"/>
+    <eOperations xsi:type="com.scade.sdk.data.service:HttpRequest" name="getTrip" eType="//TripsResponse" responseType="JSON" url="http://www.basketclub.ru/pictures/scheduleApp/trips.json"/>
+    <invocations request="//BasketService/getSchedule" url="http://www.basketclub.ru/pictures/scheduleApp/Schedule.json">
+      <response type="JSON" content="{&#xA;&#x9;&quot;practices&quot; : &#xA;&#x9;[&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&quot;date&quot;: &quot;1.01.16&quot;,&#xA;&#x9;&#x9;&#x9;&quot;description&quot; : &#xA;&#x9;&#x9;&#x9;[&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;10.00&quot;, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Ð¡ÐµÐ²ÐµÑ&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;type&quot;: &quot;ÐÐ¤Ð&quot;&#xA;&#x9;&#x9;&#x9;&#x9;},&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;12.00&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Ð¡ÐµÐ²ÐµÑ&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;type&quot;: &quot;Ð¢ÑÐµÐ½Ð°Ð¶ÐµÑÐºÐ°&quot;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;]&#xA;&#x9;&#x9;},&#xA;&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&quot;date&quot;: &quot;4.01.16&quot;,&#xA;&#x9;&#x9;&#x9;&quot;description&quot; : &#xA;&#x9;&#x9;&#x9;[&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;13.00&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Ð¡ÐµÐ²ÐµÑ&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;type&quot;: &quot;ÐÐ°Ð»&quot;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;]&#xA;&#x9;&#x9;}&#xA;&#x9;]&#xA;}"/>
+    </invocations>
+    <invocations request="//BasketService/getTrip" url="http://www.basketclub.ru/pictures/scheduleApp/trips.json">
+      <response type="JSON" content="{&#xA;&#x9;&quot;trips&quot; : &#xA;&#x9;[&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&quot;date&quot;: &quot;1.01.16&quot;,&#xA;&#x9;&#x9;&#x9;&quot;description&quot; : &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;town&quot;: &quot;Moscow&quot;, &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Tolmachevo&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;10:00 am&quot;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;},&#xA;&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&quot;date&quot;: &quot;4.01.16&quot;,&#xA;&#x9;&#x9;&#x9;&quot;description&quot; : &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;town&quot;: &quot;Ekaterinburg&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Tolmachevo&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;6:00 am&quot;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;},&#xA;&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&quot;date&quot;: &quot;10.01.16&quot;,&#xA;&#x9;&#x9;&#x9;&quot;description&quot; : &#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;town&quot;: &quot;Irkutsk&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;place&quot;: &quot;Tolmachevo&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;time&quot;: &quot;22:00 pm&quot;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;]&#xA;}"/>
+    </invocations>
+    <contents xsi:type="com.scade.sdk.data.service:NoAuth"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description">
+    <eSuperTypes href="http://scade.com/BasketballApp#//Description"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="place">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Practices">
+    <eSuperTypes href="http://scade.com/BasketballApp#//Practices"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1" eType="//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleResponse">
+    <eSuperTypes href="http://scade.com/BasketballApp#//ScheduleResponse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="practices" upperBound="-1" eType="//Practices" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description1">
+    <eSuperTypes href="http://scade.com/BasketballApp#//Description1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="town">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="place">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trips">
+    <eSuperTypes href="http://scade.com/BasketballApp#//Trips"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="//Description1" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TripsResponse">
+    <eSuperTypes href="http://scade.com/BasketballApp#//TripsResponse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trips" upperBound="-1" eType="//Trips" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

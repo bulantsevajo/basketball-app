@@ -1,0 +1,10 @@
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/swift-app.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-configure-build.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-copy.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-write-scripts-list.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-copy-scripts.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-gradle.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp-copy-project.dir
+/Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/CMakeFiles/BasketballApp.dir

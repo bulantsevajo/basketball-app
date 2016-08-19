@@ -1,0 +1,4 @@
+set solib-search-path /Users/juliabulantseva/GitHub/Examples/Swift/BasketballApp/.build/android-armeabi-v7a/BasketballApp-android/obj/local/armeabi-v7a
+source /opt/android-ndk-r11c/prebuilt/common/gdb/common.setup
+directory /opt/android-ndk-r11c/platforms/android-16/arch-arm/usr/include /opt/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include /opt/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include /opt/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+
