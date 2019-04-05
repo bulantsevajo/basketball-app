@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        background: url(/static/media/images/loading.gif) #fff 50% 50% no-repeat;
+        background-size: 100px 100px;
+    }
+</style>
+<script src="/static/media/firebase-app.js"></script>
+<script src="/static/media/firebase-auth.js"></script>
+<script type="text/javascript" src="/static/media/jquery-2.2.4.min.js"></script>
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyDgc9jJ_2LG0BqdMhpFGGaQR9dRaICzigc",
+        authDomain: "skillstamp-u071.firebaseapp.com",
+        databaseURL: "https://skillstamp-u071.firebaseio.com",
+        projectId: "skillstamp-u071",
+        storageBucket: "skillstamp-u071.appspot.com",
+        messagingSenderId: "482293567229"
+    });
+
+    function parseGETparams() {
+        let dict = {};
+
+        if (window.location.search && window.location.search.length > 1) {
+            let path = window.location.search.slice(1);
+            let items = path.split('#')[0].split('&');
+
+            items.forEach((el) => {
+                let vals = el.split('=');
+
+                dict[vals[0]] = vals[1];
+            });
+        }
+
+        return dict;
+    }
+
+    let params = parseGETparams();
+
+    const functionsURL = 'https://us-central1-skillstamp-u071.cloudfunctions.net/api/';
+
+    let error = '';
+
+    /**
+     * This callback is called by the JSONP callback of the 'token' Firebase Function with the Firebase auth token.
+     */
+    window.tokenReceived = function (data) {
+        if (data.token) {
+            firebase.auth().signInWithCustomToken(data.token).then(function () {
+                if (data.isUserNewbie) {
+                    window.opener.location = '/profile?modal=greetings';
+                }
+                else {
+                    window.opener.location.reload();
+                }
+                window.close();
+            });
+        } else {
+            console.error(data);
+            error = 'Error in the token Function: ' + data.error;
+        }
+    };
+    if (params.error) {
+        error = 'Error back from the LinkedIn auth page: ' + params.error;
+    } else if (!params.code) {
+        window.location.href = functionsURL + 'linkedInRedirect';
+    } else {
+        $.ajax({
+            url: functionsURL + 'linkedInToken',
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                code: params.code,
+                state: params.state
+            },
+            success: function (response) {
+                console.log(response); // server response
+                window.tokenReceived(response);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

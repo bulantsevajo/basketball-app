@@ -1,0 +1,23 @@
+
+.fade-enter-active, .fade-leave-active {
+    transition: $transition-time;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+    transition: $transition-time;
+}
+.slide-enter, .slide-leave-to /* .slide-leave-active below version 2.1.8 */ {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.modal-enter-active, .modal-leave-active {
+    transition: $transition-time;
+}
+.modal-enter, .modal-leave-to /* .modal-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: scale(1.05);
+}

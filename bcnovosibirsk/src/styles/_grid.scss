@@ -1,0 +1,181 @@
+// scss-lint:disable NameFormat
+
+@import "media_queries";
+
+$GRID_COL_SPACE: 15px;
+$GRID_COL_SPACE_HALF: $GRID_COL_SPACE / 2;
+$GRID_COL_COUNT: 12;
+
+// Flex Container
+
+@mixin flex-row() {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//Flex Columns
+
+@mixin flex-col($screen-size: "xxs", $col: 12, $offset: 0, $col_spacing: 1) {
+
+    @include media-min($screen-size) {
+        padding: $GRID_COL_SPACE_HALF * $col_spacing $GRID_COL_SPACE_HALF * $col_spacing;
+        width: $col * 100 / $GRID_COL_COUNT * 1%;
+    }
+}
+
+
+@mixin container() {
+    left: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+    width: 1140px;
+
+    @include media-max("md") {
+        width: 970px;
+    }
+
+    @include media-max("sm") {
+        width: 710px;
+    }
+
+    @include media-max("xs") {
+        padding-left: $GRID_COL_SPACE * 2;
+        padding-right: $GRID_COL_SPACE * 2;
+        width: 100%;
+    }
+}
+
+@mixin md-container() {
+    left: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+    width: 970px;
+
+    @include media-min("lg") {
+        width: 1140px;
+    }
+}
+
+@mixin shifted-container-percentage($size: 100, $offset: 0) {
+    $factor: $size / 100;
+    $offsetFactor: 1 / 2 - $offset / 100;
+
+    left: 50%;
+    margin-left: -1140 * $offsetFactor * 1px;
+    position: relative;
+    width: 1140 * $factor * 1px;
+
+    @if $offset == 0 {
+        padding-left: initial;
+    }
+
+    @if $size + $offset > 99 {
+        padding-right: initial;
+    }
+
+    @include media-max("md") {
+        margin-left: -970 * $offsetFactor * 1px;
+        width: 970 * $factor * 1px;
+    }
+
+    @include media-max("sm") {
+        margin-left: -750 * $offsetFactor * 1px;
+        width: 750 * $factor * 1px;
+
+        @if $offset == 0 {
+            padding-left: $GRID_COL_SPACE * 2;
+        }
+
+        @if $size + $offset > 99 {
+            padding-right: $GRID_COL_SPACE * 2;
+        }
+    }
+
+    @include media-max("xs") {
+        left: 0;
+        margin-left: $offset / 100 * 100%;
+        width: $factor * 100%;
+    }
+}
+
+@mixin shifted-container($column-size: 12, $offset: 0) {
+
+    @include shifted-container-percentage($column-size * 100 / 12, $offset * 100 / 12);
+}
+
+@mixin clearfix() {
+    &::before,
+    &::after {
+        clear: both;
+        content: " ";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+@mixin vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@mixin hide($screen-size) {
+
+    @include media-just($screen-size) {
+        display: none;
+    }
+}
+
+@mixin collapse-edge-self-margins-vert() {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin collapse-edge-self-margins-horiz() {
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@mixin collapse-edge-child-margins-vert() {
+    & > * {
+
+        @include collapse-edge-self-margins-vert();
+    }
+}
+
+@mixin collapse-edge-child-margins-horiz() {
+    & > * {
+
+        @include collapse-edge-self-margins-horiz();
+    }
+}
+
+@mixin five-layout-main() {
+
+    @include media-min("md") {
+
+        @include shifted-container-percentage(72, 28);
+    }
+}
+
+@mixin five-layout-aside() {
+
+    @include media-min("md") {
+
+        @include shifted-container-percentage(23, 0);
+    }
+}

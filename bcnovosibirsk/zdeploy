@@ -1,0 +1,3 @@
+npm run build
+firebase deploy
+open https://bcnovosibirsk.firebaseapp.com/
